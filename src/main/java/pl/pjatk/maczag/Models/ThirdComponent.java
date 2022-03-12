@@ -3,7 +3,7 @@ package pl.pjatk.maczag.Models;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class ThirdComponent {
     private ApplicationContext context;
 
@@ -17,5 +17,7 @@ public class ThirdComponent {
 
         user.printUser();
         userGroup.printUserGroup();
+//        user.getUserGroup().printUserGroup();
+
     }
 }

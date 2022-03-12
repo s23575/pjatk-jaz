@@ -2,7 +2,7 @@ package pl.pjatk.maczag.Models;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class User {
     private UserGroup userGroup;
 
@@ -13,6 +13,14 @@ public class User {
 
     public void printUser() {
         System.out.println("User printUser");
+    }
+
+    public UserGroup getUserGroup() {
+        return userGroup;
+    }
+
+    public void setUserGroup(UserGroup userGroup) {
+        this.userGroup = userGroup;
     }
 
 }
