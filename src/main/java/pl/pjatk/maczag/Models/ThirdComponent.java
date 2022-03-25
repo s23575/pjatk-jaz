@@ -1,7 +1,6 @@
 package pl.pjatk.maczag.Models;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 
 //@Component
 public class ThirdComponent {
@@ -9,15 +8,14 @@ public class ThirdComponent {
 
     public ThirdComponent(ApplicationContext context) {
         this.context = context;
-//        User user = (User) context.getBean("user");
-//        UserGroup userGroup = (UserGroup) context.getBean("userGroup");
+//        SecondComponent SecondComponent = (SecondComponent) context.getBean("secondComponent");
+//        FirstComponent firstComponent = (FirstComponent) context.getBean("firstComponent");
 
-        User user = context.getBean("user", User.class);
-        UserGroup userGroup = context.getBean("userGroup", UserGroup.class);
+        SecondComponent secondComponent = context.getBean("secondComponent", SecondComponent.class);
+        FirstComponent firstComponent = context.getBean("firstComponent", FirstComponent.class);
 
-        user.printUser();
-        userGroup.printUserGroup();
-//        user.getUserGroup().printUserGroup();
+        secondComponent.printSecondComponent();
+        firstComponent.printFirstComponent();
 
     }
 }
