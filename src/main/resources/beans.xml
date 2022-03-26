@@ -5,15 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="firstComponent" class="pl.pjatk.maczag.Models.FirstComponent">
-    </bean>
+<!--    <bean id="firstComponent" class="pl.pjatk.maczag.Models.FirstComponent">-->
+<!--    </bean>-->
 
-    <bean id="secondComponent" class="pl.pjatk.maczag.Models.SecondComponent">
-        <constructor-arg index="0" ref="firstComponent"/>
-        <!-- Powyższe musi być, jeżeli w samej klasie / konstruktorze nie ma ApplicationContext - tak jak w ThirdComponent-->
-    </bean>
+<!--    <bean id="secondComponent" class="pl.pjatk.maczag.Models.SecondComponent">-->
+<!--        <constructor-arg index="0" ref="firstComponent"/>-->
+<!--        &lt;!&ndash; Powyższe musi być, jeżeli w samej klasie / konstruktorze nie ma ApplicationContext - tak jak w ThirdComponent&ndash;&gt;-->
+<!--    </bean>-->
 
-    <bean id="thirdComponent" class="pl.pjatk.maczag.Models.ThirdComponent">
-    </bean>
+<!--    <bean id="thirdComponent" class="pl.pjatk.maczag.Models.ThirdComponent">-->
+<!--    </bean>-->
 
 </beans>

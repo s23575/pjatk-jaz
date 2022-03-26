@@ -1,6 +1,8 @@
 package pl.pjatk.maczag.Models;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class SecondComponent {
     private FirstComponent firstComponent;
 
