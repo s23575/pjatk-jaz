@@ -1,12 +1,14 @@
-package pl.pjatk.maczag.Models;
+package pl.pjatk.maczag.sandbox.Models;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
 @Configuration
+@ComponentScan(basePackages = "pl.pjatk.maczag.test.*")
 public class AppConfig {
 
     @Bean
@@ -22,8 +24,9 @@ public class AppConfig {
     }
 
     @Bean
-//    @ConditionalOnProperty(name = "some.property", havingValue = true)
+    @ConditionalOnProperty(value="homework.value", havingValue="true")
     public HomeworkClass homeworkClass() {
         return new HomeworkClass();
     }
+
 }

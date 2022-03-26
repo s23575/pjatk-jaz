@@ -1,4 +1,4 @@
-package pl.pjatk.maczag.Models;
+package pl.pjatk.maczag.sandbox.Models;
 
 import org.springframework.stereotype.Component;
 
