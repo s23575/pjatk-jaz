@@ -54,11 +54,15 @@ public class HomeworkController {
     //      "nazwisko": "nowak"
     //  }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Object> deleteStudentWithValue(@PathVariable Integer id) {
-        return ResponseEntity.status(200).build();
-//        return ResponseEntity.status(200).body("Test");
-    }
-    // localhost:8080/homework/delete/13
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<Object> deleteStudentWithValue(@PathVariable Integer id) {
+//        return ResponseEntity.status(200).build();
+////        return ResponseEntity.status(200).body("Test");
+//    }
+//    // localhost:8080/homework/delete/13
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteStudentWithValue(@PathVariable Integer id) {
+        return ResponseEntity.status(200).build();
+    }
 }
