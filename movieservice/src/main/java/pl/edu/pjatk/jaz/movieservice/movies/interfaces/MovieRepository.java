@@ -10,6 +10,7 @@ import javax.transaction.Transactional;
 
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
+    
     @Transactional
     @Modifying
     @Query("UPDATE Movie m SET m.title = :title, m.originalTitle = :originaltitle," +
