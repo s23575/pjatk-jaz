@@ -17,11 +17,22 @@ public class Movie {
     private String originalTitle;
     @Column(name = "yearofproduction", columnDefinition = "year")
     private Integer yearOfProduction;
-    @ColumnTransformer(read  = "upper(genre)")
+    @ColumnTransformer(read = "upper(genre)")
     // Powyższe jest potrzebne, aby enumy z bazy danych, pisane małymi literami, były odpowiednio odczytywane przez
     // aplikację - enumy określone dużymi literami
     @Enumerated(EnumType.STRING)
     private Genre genre;
+    @Column(columnDefinition = "bit")
+    private boolean isAvailable;
+
+    public Movie(Integer id, String title, String originalTitle, Integer yearOfProduction, Genre genre, boolean isAvailable) {
+        this.id = id;
+        this.title = title;
+        this.originalTitle = originalTitle;
+        this.yearOfProduction = yearOfProduction;
+        this.genre = genre;
+        this.isAvailable = isAvailable;
+    }
 
     public Movie(Integer id, String title, String originalTitle, Genre genre, Integer yearOfProduction) {
         this.id = id;
@@ -72,6 +83,14 @@ public class Movie {
 
     public void setYearOfProduction(Integer yearOfProduction) {
         this.yearOfProduction = yearOfProduction;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
     @Override

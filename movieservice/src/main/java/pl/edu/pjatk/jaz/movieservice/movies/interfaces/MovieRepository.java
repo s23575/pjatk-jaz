@@ -7,14 +7,34 @@ import pl.edu.pjatk.jaz.movieservice.movies.models.Movie;
 import pl.edu.pjatk.jaz.movieservice.movies.types.Genre;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
 
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
-    
+    Optional<Movie> findById(Integer id);
+
+    List<Movie> findAll();
+
+    Movie save(Movie movieToSave);
+
     @Transactional
     @Modifying
-    @Query("UPDATE Movie m SET m.title = :title, m.originalTitle = :originaltitle," +
-            "m.yearOfProduction= :yearofproduction, m.genre = :genre" +
+    @Query("UPDATE Movie m SET m.title = :title, m.originalTitle = :originalTitle," +
+            "m.yearOfProduction= :yearOfProduction, m.genre = :genre" +
             " WHERE m.id = :id")
-    void updateMovie(String title, String originaltitle, Genre genre, Integer yearofproduction, Integer id);
+    void updateMovie(String title, String originalTitle, Integer yearOfProduction, Genre genre, Integer id);
+
+    void deleteById(Integer id);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Movie m SET m.isAvailable = true WHERE m.id = :id")
+    void updateAvailability(Integer id);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Movie m SET m.isAvailable = true")
+    void updateAvailabilityAll();
 }
+

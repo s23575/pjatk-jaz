@@ -38,8 +38,8 @@ public class MovieController {
 //    {
 //        "title": "Szklana pułapka",
 //        "originalTitle": "Die Hard",
-//        "genre": "ACTION",
-//        "yearOfProduction": 1988
+//        "genre": "DRAMA",
+//        "yearOfProduction": 1987
 //    }
 
     @PutMapping("/movies/{id}")
@@ -59,5 +59,15 @@ public class MovieController {
     public ResponseEntity<Void> deleteMovie(@PathVariable Integer id) {
         movieService.deleteMovie(id);
         return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/movies/availability/{id}")
+    public ResponseEntity<Movie> updateMovieAvailabilityById(@PathVariable Integer id) {
+        return ResponseEntity.ok(movieService.updateAvailability(id));
+    }
+
+    @PutMapping("/movies/availability")
+    public ResponseEntity<List<Movie>> updateMovieAvailability() {
+        return ResponseEntity.ok(movieService.updateAvailabilityAll());
     }
 }
