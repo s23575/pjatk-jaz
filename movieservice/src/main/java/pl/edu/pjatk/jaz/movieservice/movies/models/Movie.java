@@ -22,7 +22,7 @@ public class Movie {
     // aplikację - enumy określone dużymi literami
     @Enumerated(EnumType.STRING)
     private Genre genre;
-    @Column(columnDefinition = "bit")
+//    @Column(columnDefinition = "bit")
     private boolean isAvailable;
 
     public Movie(Integer id, String title, String originalTitle, Integer yearOfProduction, Genre genre, boolean isAvailable) {
