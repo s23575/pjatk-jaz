@@ -40,13 +40,23 @@ public class MovieService {
         movieRepository.deleteById(id);
     }
 
-    public Movie updateAvailability(Integer id) {
-        movieRepository.updateAvailability(id);
+    public Movie updateAvailabilityTrue(Integer id) {
+        movieRepository.updateAvailabilityTrue(id);
         return movieRepository.findById(id).orElseThrow(NotFoundException::new);
     }
 
-    public List<Movie> updateAvailabilityAll() {
-        movieRepository.updateAvailabilityAll();
+    public List<Movie> updateAvailabilityTrueAll() {
+        movieRepository.updateAvailabilityTrueAll();
+        return movieRepository.findAll();
+    }
+
+    public Movie updateAvailabilityFalse(Integer id) {
+        movieRepository.updateAvailabilityFalse(id);
+        return movieRepository.findById(id).orElseThrow(NotFoundException::new);
+    }
+
+    public List<Movie> updateAvailabilityFalseAll() {
+        movieRepository.updateAvailabilityFalseAll();
         return movieRepository.findAll();
     }
 

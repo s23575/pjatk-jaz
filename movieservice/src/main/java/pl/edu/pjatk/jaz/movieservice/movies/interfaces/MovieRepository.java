@@ -30,11 +30,21 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
     @Transactional
     @Modifying
     @Query("UPDATE Movie m SET m.isAvailable = true WHERE m.id = :id")
-    void updateAvailability(Integer id);
-
+    void updateAvailabilityTrue(Integer id);
+// Long zwraca liczbę zmienionych wierszy - jeżeli nie zmienia żadnego, to 0
     @Transactional
     @Modifying
     @Query("UPDATE Movie m SET m.isAvailable = true")
-    void updateAvailabilityAll();
+    void updateAvailabilityTrueAll();
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Movie m SET m.isAvailable = false WHERE m.id = :id")
+    void updateAvailabilityFalse(Integer id);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Movie m SET m.isAvailable = false")
+    void updateAvailabilityFalseAll();
 }
 

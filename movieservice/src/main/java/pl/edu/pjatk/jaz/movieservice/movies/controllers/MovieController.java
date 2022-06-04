@@ -61,13 +61,23 @@ public class MovieController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/movies/availability/{id}")
-    public ResponseEntity<Movie> updateMovieAvailabilityById(@PathVariable Integer id) {
-        return ResponseEntity.ok(movieService.updateAvailability(id));
+    @PutMapping("/movies/availability/true/{id}")
+    public ResponseEntity<Movie> updateMovieAvailabilityTrueById(@PathVariable Integer id) {
+        return ResponseEntity.ok(movieService.updateAvailabilityTrue(id));
     }
 
-    @PutMapping("/movies/availability")
-    public ResponseEntity<List<Movie>> updateMovieAvailability() {
-        return ResponseEntity.ok(movieService.updateAvailabilityAll());
+    @PutMapping("/movies/availability/true")
+    public ResponseEntity<List<Movie>> updateMovieAvailabilityTrue() {
+        return ResponseEntity.ok(movieService.updateAvailabilityTrueAll());
+    }
+
+    @PutMapping("/movies/availability/false/{id}")
+    public ResponseEntity<Movie> updateMovieAvailabilityFalseById(@PathVariable Integer id) {
+        return ResponseEntity.ok(movieService.updateAvailabilityFalse(id));
+    }
+
+    @PutMapping("/movies/availability/false")
+    public ResponseEntity<List<Movie>> updateMovieAvailabilityFalse() {
+        return ResponseEntity.ok(movieService.updateAvailabilityFalseAll());
     }
 }
