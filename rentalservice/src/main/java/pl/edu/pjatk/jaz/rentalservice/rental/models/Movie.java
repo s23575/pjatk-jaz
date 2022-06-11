@@ -1,13 +1,22 @@
 package pl.edu.pjatk.jaz.rentalservice.rental.models;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import pl.edu.pjatk.jaz.rentalservice.rental.types.Genre;
 
+@ApiModel(value = "Movie", description = "A movie")
 public class Movie {
+    @ApiModelProperty(value = "The unique identifier of the movie")
     private Integer id;
+    @ApiModelProperty(value = "Title of the movie")
     private String title;
+    @ApiModelProperty(value = "Original title of the movie (optional)")
     private String originalTitle;
+    @ApiModelProperty(value = "Year of production of the movie")
     private Integer yearOfProduction;
+    @ApiModelProperty(value = "Genre of the movie")
     private Genre genre;
+    @ApiModelProperty(value = "Availability of the movie")
     private boolean isAvailable;
 
     public Movie(Integer id, String title, String originalTitle, Integer yearOfProduction, Genre genre, boolean isAvailable) {
