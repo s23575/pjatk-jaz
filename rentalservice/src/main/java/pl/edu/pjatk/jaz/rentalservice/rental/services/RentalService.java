@@ -17,7 +17,7 @@ public class RentalService {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Movie> response = restTemplate
                 .exchange(resourceUrl + id, HttpMethod.GET, null, Movie.class);
-        return Optional.ofNullable(response.getBody()).orElseThrow();
+            return Optional.ofNullable(response.getBody()).orElseThrow();
     }
 
     public Movie returnMovie(Integer id) {

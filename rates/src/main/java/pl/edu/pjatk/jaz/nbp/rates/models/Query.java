@@ -1,28 +1,45 @@
 package pl.edu.pjatk.jaz.nbp.rates.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
+@Entity
 public class Query {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String currency;
     private String code;
-    private String startDate;
-    private String endDate;
     private Integer days;
+    private String endDate;
+    private String startDate;
     private double mid;
     private Timestamp timestamp;
 
-    public Query(Long id, String currency, String code, String startDate, String endDate, double mid) {
+    public Query(Long id, String currency, String code, Integer days, String endDate, String startDate, double mid,
+                 Timestamp timestamp) {
         this.id = id;
         this.currency = currency;
         this.code = code;
-        this.startDate = startDate;
+        this.days = days;
         this.endDate = endDate;
-        this.days = (int) ChronoUnit.DAYS.between(LocalDate.parse(startDate), LocalDate.parse(endDate));
+        this.startDate = startDate;
         this.mid = mid;
-        this.timestamp = new Timestamp(System.currentTimeMillis());
+        this.timestamp = timestamp;
+    }
+
+    public Query(String currency, String code, Integer days, String endDate, String startDate, double mid, Timestamp
+            timestamp) {
+        this.currency = currency;
+        this.code = code;
+        this.days = days;
+        this.endDate = endDate;
+        this.startDate = startDate;
+        this.mid = mid;
+        this.timestamp = timestamp;
     }
 
     public Query() {

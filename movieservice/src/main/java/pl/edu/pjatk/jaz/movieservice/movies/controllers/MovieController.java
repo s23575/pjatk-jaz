@@ -12,8 +12,8 @@ import pl.edu.pjatk.jaz.movieservice.movies.services.MovieService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/movieservice")
+    @RestController
+    @RequestMapping("/movieservice")
 public class MovieController {
 
     private final MovieService movieService;
