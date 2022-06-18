@@ -20,14 +20,14 @@ public class MaterialController {
     }
 
     @GetMapping("/average/{start}/{end}/")
-//    @ApiOperation(value = "Get average exchange rate", notes =
-//            "Retriving average exchange rate of foreign currency for specific number of days", response = Query.class)
-//    @ApiResponses({
-//            @ApiResponse(code = 200, message = "SUCCESS", response = Query.class),
-//            @ApiResponse(code = 404, message = "NOT FOUND"),
-//            @ApiResponse(code = 400, message = "BAD REQUEST"),
-//            @ApiResponse(code = 400, message = "BAD REQUEST (EXCEEDED LIMIT OF 367 DAYS)")
-//    })
+    @ApiOperation(value = "Get average value of gold", notes =
+            "Retriving average value of gold for specific period", response = MaterialQuery.class)
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "SUCCESS", response = MaterialQuery.class),
+            @ApiResponse(code = 404, message = "NOT FOUND"),
+            @ApiResponse(code = 400, message = "BAD REQUEST"),
+            @ApiResponse(code = 400, message = "BAD REQUEST (EXCEEDED LIMIT OF 367 DAYS)")
+    })
     public ResponseEntity<MaterialQuery> getAverageValue(@PathVariable String start, @PathVariable String end) {
         return ResponseEntity.ok(materialService.getAverageValue(start, end));
     }
