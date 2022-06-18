@@ -25,7 +25,7 @@ public class ExceptionsHandler {
             return ResponseEntity.status(400).body("BAD REQUEST");
         }
     }
-    // Powyższe, to kody błędów, które może zwrócić NBP
+    // Powyższe, to kody błędów, które może zwrócić NBP, zgodnie z dokumentacją: http://api.nbp.pl/
 
     @ExceptionHandler(HttpServerErrorException.InternalServerError.class)
     public ResponseEntity<String> InternalServerError() {
