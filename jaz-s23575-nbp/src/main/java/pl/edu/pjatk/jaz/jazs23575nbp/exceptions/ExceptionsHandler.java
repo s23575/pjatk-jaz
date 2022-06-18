@@ -36,5 +36,4 @@ public class ExceptionsHandler {
     public ResponseEntity<String> ConnectException() {
         return ResponseEntity.status(504).body("CONNECT EXCEPTION");
     }
-
 }

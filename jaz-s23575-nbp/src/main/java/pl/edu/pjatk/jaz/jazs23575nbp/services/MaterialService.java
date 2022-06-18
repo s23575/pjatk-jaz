@@ -40,10 +40,10 @@ public class MaterialService {
 
         double averageRate = prices.stream().mapToDouble(Price::getCena).average().orElse(0);
 
-        MaterialQuery queryToSave = new MaterialQuery(Material.GOLD, start, end, averageRate,
+        MaterialQuery materialQueryToSave = new MaterialQuery(Material.GOLD, start, end, averageRate,
                 new Timestamp(System.currentTimeMillis()));
 
-        return materialRepository.save(queryToSave);
+        return materialRepository.save(materialQueryToSave);
     }
 
 }
