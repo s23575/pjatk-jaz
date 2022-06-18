@@ -4,10 +4,12 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pl.edu.pjatk.jaz.jazs23575nbp.models.MaterialQuery;
 import pl.edu.pjatk.jaz.jazs23575nbp.services.MaterialService;
-import pl.edu.pjatk.jaz.jazs23575nbp.types.Material;
 
 @RestController
 @RequestMapping("/nbpmaterials")
